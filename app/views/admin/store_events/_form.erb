@@ -1,0 +1,24 @@
+<p>
+  <%= f.label :store %> <br/>
+  <%= f.select :store_id, store_selection %>
+</p>
+<p>
+  <%= f.label :event_type %> <br/>
+  <%= f.select :event_type, event_type_selection  %>
+</p>
+<p>
+  <%= f.label :name %> <br/>
+  <%= f.text_field :name, :size => 50 %>
+</p>
+<p>
+  <%= f.label :happens_at %> <br/>
+  <%= f.unobtrusive_date_text_picker :happens_at %>
+</p>
+<p>
+  <%= f.label :event_time %> <br/>
+  <%= f.text_field :event_time, :size => 50 %>
+</p>
+<p>
+  <%= f.label :content %> <br/>
+  <%= f.text_area :content, :cols => 100, :style => "height:150px;" %>
+</p>

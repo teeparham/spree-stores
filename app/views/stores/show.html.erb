@@ -1,0 +1,24 @@
+<h1><%= @store.name %></h1>
+<div id="location-details">
+  <p><%= @store.details %></p>
+</div>
+<div id="stores-main">
+  <div id="store-image">
+    <%= image_tag(@store.attachment.url(:medium)) if @store.attachment_file_name %>
+  </div>
+  <div id="store-text">
+    <h5><%= @store.blurb %></h5>
+    <p>Meet our <%= link_to_store_people(@store, t(:store_people).downcase) %>.</p>
+  </div>
+  <%= render :partial => 'promo', :locals => {:store => @store} %>
+  <br class="clearfloatleft"/>
+  <div id="monthly-events">
+   <%= render :partial => 'monthly_events', :locals => {:store => @store} %>
+  </div>
+  <div id="ongoing-events">
+    <%= render :partial => 'ongoing_events', :locals => {:events => @store.ongoing_events} %>
+  </div>
+  <div id="featured-events">
+    <%= render :partial => 'featured_events', :locals => {:events => @store.special_events} %>
+  </div>
+</div>

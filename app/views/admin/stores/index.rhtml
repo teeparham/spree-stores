@@ -1,0 +1,42 @@
+<% render :partial => 'admin/shared/store_sub_menu' %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_store"), new_object_url, :icon => 'add' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("listing_stores") %></h1>
+
+<table width="600" cellpadding="5" class="index">
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th></th>
+  </tr>
+  <% for store in @stores %>
+    <tr id="store_<%= store.id %>">
+      <td><%= store.attachment_file_name ? image_tag(store.attachment.url(:thumb)) : image_tag("missing.jpg", :height=>"40", :width=>"40") %></td>
+      <td><%=h store.name %></td>
+      <td><%=h store.permalink %></td>
+      <td><%=h store.address1 %></td>
+      <td><%=h store.address2 %></td>
+      <td><%=h store.city %></td>
+      <td><%=h store.state %></td>
+      <td><%=h store.zip %></td>
+      <td>
+        <%= link_to_with_icon('edit', t("edit"), "/admin/stores/" + store.id.to_s + "/edit") %>&nbsp;
+        <%= link_to_delete store, :url => "/admin/stores/" + store.id.to_s %>
+      </td>
+    </tr>
+  <% end %>
+</table>

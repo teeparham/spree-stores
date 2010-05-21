@@ -1,0 +1,16 @@
+<h2><%= found_message(@stores) %></h2>
+<div id="store-result">
+  <% @stores.each_with_index do |store, index| %>
+    <ul><%= index + 1 %>. <%= link_to store.name, store.to_url %>
+      <li> <%= store.address1 %></li>
+      <li> <%= store.address2 %></li>
+      <li> <%= store.city_state_zip %></li>
+      <li> <%= store.description %></li>
+    </ul>
+  <% end %>
+</div>
+<%= GMap.header(:host => request.host) %>
+<%= javascript_include_tag("markerGroup") %>
+<%= @map.to_html %>
+<%= @map.div(:width => 600, :height => 450) %>
+

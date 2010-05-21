@@ -1,0 +1,21 @@
+<p>
+  <%= f.label :store %> <br/>
+  <%= f.select :store_id, store_selection %>
+</p>
+<p>
+  <%= f.label :name %> <br/>
+  <%= f.text_field :name, :size => 50 %>
+</p>
+<p>
+  <%= f.label :description %> <br/>
+  <%= f.text_area :description, :cols => 100, :style => "height:100px;" %>
+</p>
+<p>
+  <%= f.label :image %> <br/>
+  <%= @store_person.image_file_name ? image_tag(@store_person.image.url(:thumb)) : image_tag("missing.jpg", :height=>"40", :width=>"40") %>
+  <%= f.file_field :image %>
+</p>
+<p>
+  <%= f.label :priority %> <br/>
+  <%= f.select :priority, (1..10).to_a.collect!{|i| [i,i]} %>
+</p>

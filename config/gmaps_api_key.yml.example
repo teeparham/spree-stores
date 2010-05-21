@@ -1,0 +1,7 @@
+#Fill here the Google Maps API keys for your application
+
+#
+development: ABQIAAAAmjJFbzoDiZ8-G2lCFX1mzBT-FO7D8bKoU98il3yOdxvGvxaLBhR6L7uRQk-c5aOiUgZwUhByVKoFgQ ## sample google key for development environment
+test:        ABQIAAAAmjJFbzoDiZ8-G2lCFX1mzBT-FO7D8bKoU98il3yOdxvGvxaLBhR6L7uRQk-c5aOiUgZwUhByVKoFgQ ## sample google key for test environment
+staging:     yourkey
+production:  yourkey

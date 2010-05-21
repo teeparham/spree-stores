@@ -1,0 +1,13 @@
+<table class="staff">
+  <tr>
+    <td class="staff-pic">
+      <%= image_tag(person.image.url(:medium)) if person.image_file_name %>
+    </td>
+    <td class="bio">
+      <p>
+        <strong><%= person.name %></strong><br/>
+        <%= person.description %>
+      </p>
+    </td>
+  </tr>
+</table>

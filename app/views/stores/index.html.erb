@@ -1,0 +1,35 @@
+<% title = "#{Spree::Config[:site_name]} - Store Locator" %>
+<h1>Store Locator</h1>
+<div>
+  <div>
+    <p>Enter a city and state or zip to search for a store near you: </p>
+
+    <% form_tag :action => :locate do %>
+      <table>
+        <tr>
+          <td height="30" width="150">City</td>
+          <td><%= text_field_tag "city" %></td>
+        </tr>
+        <tr>
+          <td height="30" width="150">State</td>
+          <td><%= text_field_tag "state" %></td>
+        </tr>
+        <tr>
+          <td height="30" width="150">Zip</td>
+          <td><%= text_field_tag "zip" %></td>
+        </tr>
+        <tr>
+          <td height="30" width="150">Distance</td>
+          <td><%= select :search, :distance, [["5 Miles", "5"], ["10 Miles", "10"], ["20 Miles", "20"], ["50 Miles", "50"], ["100 Miles", "100"]] %>
+            <br/></td>
+        </tr>
+        <tr>
+          <td height="30" width="150">&nbsp;</td>
+          <td><%= submit_tag "Search", :class=>"submit-question" %></td>
+        </tr>
+      </table>
+    <% end %>
+
+  </div>
+</div>
+

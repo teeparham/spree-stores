@@ -1,0 +1,16 @@
+---
+en:
+  stores: "Stores"
+  listing_stores: "Stores"
+  new_store: "New Store"
+  store_people: "Store Staff"
+  store_events: "Store Events"
+  editing_store: "Edit Store"
+  creating_store: "Create Store"
+  listing_store_events: "Store Events"
+  new_store_event: "New Store Event"
+  new_store_person: "New Store Staff"
+  creating_store_event: "Create Store Event"
+  editing_store_event: "Edit Store Event"
+  creating_store_staff: "Create Store Staff"
+  editing_store_staff: "Edit Store Staff"

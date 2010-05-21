@@ -1,0 +1,61 @@
+
+<% render :partial => 'admin/shared/store_sub_menu' %>
+
+<div>
+  <% form_tag :action => :index do %>
+    <table>
+      <tr>
+        <td>Store </td>
+        <td><%= select_tag "store", options_for_select(store_selection, @search.store.blank? ? "" : @search.store.to_i) %></td>
+      </tr>
+      <tr>
+        <td>Event Type </td>
+        <td><%= select_tag "event_type", options_for_select(event_type_selection, @search.event_type.blank? ? "" : @search.event_type.to_i) %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= submit_tag "Search" %></td> 
+      </tr>
+    </table>
+
+  <% end %>
+</div>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_store_event"), new_object_url, :icon => 'add' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("listing_store_events") %></h1>
+
+<table width="600" cellpadding="5" class="index">
+  <tr>
+    <th>Store</th>
+    <th>Event Name</th>
+    <th>Happens At</th>
+    <th>Time</th>
+    <th>Event Type</th>
+    <th>Content</th>
+    <th colspan="2" ></th>
+  </tr>
+  <% for event in @store_events %>
+    <tr id="store_event_<%= event.id %>">
+      <td><%=h event.store.name rescue "" %></td>
+      <td><%= link_to event.name, object_url(event) %></td>
+      <td><%= event.happens_at %></td>
+      <td><%= event.event_time %></td>
+      <td><%=h event.event_type_name %></td>
+      <td><%=h truncate(event.content, :length=>80) %></td>
+      <td class="action">
+        <%= link_to_edit event %>
+      </td>
+      <td class="action">
+        <%= link_to_delete event %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

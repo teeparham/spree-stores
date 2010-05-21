@@ -1,0 +1,12 @@
+<% unless events.empty? %>
+  <h3>Ongoing Events</h3>
+  <% events.each do |event| %>
+    <p>
+      <span class="event-title"><%= event.name %></span>
+      <br />
+      <span class="date"><%= "#{event.event_time}<br />" unless event.event_time.blank? %></span>
+      <%= event.content %>
+    </p>
+  <% end %>
+<% end %>
+

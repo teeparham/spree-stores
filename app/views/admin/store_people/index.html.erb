@@ -1,0 +1,53 @@
+<% render :partial => 'admin/shared/store_sub_menu' %>
+
+<div>
+  <% form_tag :action => :index do %>
+    <table>
+      <tr>
+        <td>Store Filter</td>
+        <td><%= select_tag "store", options_for_select(store_selection, @search.key.blank? ? "" : @search.key.to_i) %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= submit_tag "Filter" %></td>
+      </tr>
+    </table>
+
+  <% end %>
+</div>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_store_person"), new_object_url, :icon => 'add' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("store_people") %></h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Store</th>
+    <th>Description</th>
+    <th>Priority</th>
+    <th>Image</th>
+    <th colspan="2" ></th>
+  </tr>
+  <% for person in @store_people %>
+    <tr id="store_person_<%= person.id %>">
+      <td><%= link_to  person.name, object_url(person) %></td>
+      <td><%=h person.store.name rescue "" %></td>
+      <td><%= person.description %></td>
+      <td><%= person.priority %></td>
+      <td><%= person.image_file_name ? image_tag(person.image.url(:thumb)) : image_tag("missing.jpg", :height=>40, :width=>40) %></td>
+      <td class="action">
+        <%= link_to_edit person %>
+      </td>
+      <td class="action">
+        <%= link_to_delete person %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

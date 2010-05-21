@@ -1,0 +1,14 @@
+<% render :partial => 'admin/shared/store_sub_menu' %>
+<%= error_messages_for :store_event %>
+<h1><%= t("creating_store_event") %></h1>
+<% form_for :store_event,@store_event, :url => { :action => "create" } do |f| %>
+    <%= render :partial => "form", :locals => {:f => f} %>
+  <p class="form-buttons">
+   <%= button t("create") %> <%= link_to t('cancel'), collection_url %>
+  </p>
+<% end %>
+
+
+
+
+

@@ -1,0 +1,20 @@
+<% unless store.save_the_date_events.empty? %>
+  <h3>Save the date!</h3>
+    <% store.save_the_date_events.each do |event| %>
+      <%= render :partial => 'single_event', :locals => {:event => event} %>
+    <% end %>  
+<% end %>
+
+<% unless store.this_month_events.empty? %>
+  <h3><%= Time.now.strftime('%B') %> Store Events</h3>
+    <% store.this_month_events.each do |event| %>
+      <%= render :partial => 'single_event', :locals => {:event => event} %>
+    <% end %>
+<% end %>
+
+<% unless store.next_month_events.empty? %>
+  <h3><%= Time.now.next_month.strftime('%B') %> Store Events</h3>
+    <% store.next_month_events.each do |event| %>
+      <%= render :partial => 'single_event', :locals => {:event => event} %>
+    <% end %>
+<% end %>

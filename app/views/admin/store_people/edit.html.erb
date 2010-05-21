@@ -1,0 +1,11 @@
+<% render :partial => 'admin/shared/store_sub_menu' %>
+<%= error_messages_for :store_person %>
+<h1><%= t("editing_store_staff") %></h1>
+<% form_for :store_person, @store_person, :url => { :action => "update", :id =>@store_person.id }, :html => {:method => :put,:multipart => true} do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+  <p class="form-buttons">
+    <%= button t("update") %> <%= link_to t('cancel'), collection_url %>
+  </p>
+<% end %>
+
+

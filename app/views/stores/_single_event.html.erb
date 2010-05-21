@@ -1,0 +1,10 @@
+<p>
+  <span class="event-title"><%= event.name %></span>
+  <br/>
+  <span class="date">
+    <%= event.happens_at.strftime('%A, %b %d') unless event.happens_at.blank? %>
+    <%= ", " unless (event.happens_at.blank? || event.event_time.blank?) %>
+    <%= "#{event.event_time}<br />" unless event.event_time.blank? %>
+  </span>
+  <%= event.content %>
+</p>

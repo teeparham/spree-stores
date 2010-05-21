@@ -1,0 +1,24 @@
+<% render :partial => 'admin/shared/store_sub_menu' %>
+
+<div id="store-result">
+  <p>
+
+  <h1>Show Store</h1> </p>
+  <ul>
+    <%= link_to "#{@store.name}", "#{@store.to_url}", :target => "_blank" %>
+    <li> <%= h @store.description %></li>
+    <li>  <%= h @store.address1 %></li>
+    <li>  <%= h @store.address2 %></li>
+    <li>  <%= h @store.city %></li>
+    <li>  <%= h @store.state %></li>
+    <li>  <%= h @store.zip %></li>
+  </ul>
+</div>
+
+<%= GMap.header(:host => request.host) %>
+<%= @map.to_html %>
+<%= @map.div(:width => 500, :height => 450) %>
+
+<br/>
+
+<%= link_to t('cancel'), collection_url %>

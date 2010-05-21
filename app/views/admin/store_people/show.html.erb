@@ -1,0 +1,12 @@
+<% render :partial => 'admin/shared/store_sub_menu' %>
+<div style="float:left;">
+  <%= image_tag  @store_person.image.url(:medium) %>
+</div>
+<div style="float:left;margin-left:15px;">
+  Name : <%= @store_person.name %> <br />
+  Store : <%= @store_person.store.name rescue "" %><br />
+  <%= @store_person.description %>
+  <br />
+</div>
+
+<%= link_to t('cancel'), collection_url %>

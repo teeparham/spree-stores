@@ -1,0 +1,9 @@
+<% render :partial => 'admin/shared/store_sub_menu' %>
+
+Store: <%=h @store_event.store.name rescue "" %><br />
+Name: <%=h @store_event.name %><br />
+Event Type: <%=h @store_event.event_type_name %><br />
+Happens At: <%= @store_event.happens_at %><br />
+Time: <%= @store_event.event_time %><br />
+<%= @store_event.content %><br /><br />
+<%= link_to t('cancel'), collection_url %>

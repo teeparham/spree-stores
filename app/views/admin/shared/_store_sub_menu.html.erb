@@ -1,0 +1,7 @@
+<% content_for :sub_menu do %>
+  <ul id="sub_nav">
+    <%= tab :stores, :match_path => '/stores' %>
+    <%= tab :store_people %>
+    <%= tab :store_events, :css_class => 'last' %>
+  </ul>
+<% end %>
