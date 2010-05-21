@@ -13,6 +13,7 @@ FEATURES
 * Store people (staff) pages
 
 see http://spreecommerce.com
+
 see http://github.com/railsdog/spree
 
 COMPATIBILITY
@@ -25,10 +26,10 @@ Does not work with Sqlite
 SETUP
 =====
 
-  rake db:migrate 
-  cp config/gmaps_api_key.yml.example config/gmaps_api_key.yml
+> rake db:migrate
+> cp config/gmaps_api_key.yml.example config/gmaps_api_key.yml
 
-  Edit your config/gmaps_api_key.yml file with your Google Maps API key. See below. 
+> Edit your config/gmaps_api_key.yml file with your Google Maps API key. See below.
 
 GOOGLE MAPS API
 ===============
@@ -44,6 +45,7 @@ NOTES
 =====
 
 Thanks to Geokit Rails: http://geokit.rubyforge.org/
+
 Thanks to th ym4r_gm: http://ym4r.rubyforge.org/
 
 TODO
