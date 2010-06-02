@@ -31,7 +31,7 @@ class StoresController < Spree::BaseController
 
         @stores.each_with_index do |store, index|
           @map.icon_global_init( GIcon.new(:image =>
-              "http://#{request.env['HTTP_HOST']}/images/marker_" + "#{index + 1}.png",
+              "http://#{request.env['HTTP_HOST']}/images/marker" + "#{index + 1}.png",
                :icon_size => GSize.new(32, 32),
                :icon_anchor => GPoint.new(9, 32),
                :info_window_anchor => GPoint.new(9, 2),
