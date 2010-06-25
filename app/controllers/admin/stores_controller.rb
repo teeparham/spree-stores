@@ -12,7 +12,7 @@ class Admin::StoresController < Admin::BaseController
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)
     @map.icon_global_init( GIcon.new(:image =>
-          "http://#{request.env['HTTP_HOST']}/images/marker_1.png",
+          "http://#{request.env['HTTP_HOST']}/images/marker1.png",
         :icon_size => GSize.new(32,32),
         :icon_anchor => GPoint.new(9,32),
         :info_window_anchor => GPoint.new(9,2),
